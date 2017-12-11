@@ -13,6 +13,7 @@ void setup()
   Unit = new ReactorUnit();
 }
 
+int Size = 0;
 
 void draw()
 {
@@ -22,6 +23,9 @@ void draw()
 
 void mousePressed() 
   {
+    if (mouseX > width/8 && mouseX < width/8 + 50 && mouseY > height - 75 && mouseY < height - 15)
+    {
     drawLight();
     //exit();
+    }
   }
