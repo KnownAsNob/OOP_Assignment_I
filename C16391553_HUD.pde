@@ -19,6 +19,7 @@ void draw()
 {
   Unit.drawUnit();
   Control.DrawPanel();
+    
 }
 
 void mousePressed() 
