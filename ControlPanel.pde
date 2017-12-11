@@ -31,5 +31,5 @@ void DrawPanel()
       text("Temperature", width/2, height - 10);
       
   }
-  
+
 }

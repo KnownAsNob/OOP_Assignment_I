@@ -4,7 +4,7 @@ class CoreObject
   void drawCore()
   { 
     int Size = 0;
-    
+    /*
     //Lazers
       stroke(255, 0, 0);
     line(0, 0, width/2, height/2 - 100); //TOPR
@@ -17,7 +17,7 @@ class CoreObject
     delay(500);
       noStroke();
     
-    while(Size != 250)
+  */  while(Size != 250)
     {
     fill(255, 0, 0);
     //ellipse(width/2, height/2-100, 250, 250);

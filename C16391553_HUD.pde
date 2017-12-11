@@ -14,6 +14,7 @@ void setup()
 }
 
 int Temperature = 0;
+boolean CoreActive = false;
 
 void draw()
 {
@@ -21,8 +22,22 @@ void draw()
   Control.DrawPanel();
   
   updateTemp();
+  
+  if (CoreActive == true)
+  {
+    Core.drawCore();
+    CoreActive = false;
+  }
 }
 
+void keyPressed() 
+{
+    CoreActive = true;
+    
+    Core = new CoreObject();
+   // Core.drawCore();
+}
+  
 void mousePressed() 
   {
     if (mouseX > width/8 && mouseX < width/8 + 50 && mouseY > height - 75 && mouseY < height - 15)
