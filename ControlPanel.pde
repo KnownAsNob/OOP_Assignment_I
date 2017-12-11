@@ -26,8 +26,9 @@ void DrawPanel()
     //Temperature
       fill(100);
       rect(width/2, height - 75, 100, 50);
+      fill(0);
       textSize(17);
-      text("Temperature", width/8, height - 10);
+      text("Temperature", width/2, height - 10);
       
   }
   

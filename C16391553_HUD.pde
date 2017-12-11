@@ -13,13 +13,14 @@ void setup()
   Unit = new ReactorUnit();
 }
 
-int Size = 0;
+int Temperature = 0;
 
 void draw()
 {
   Unit.drawUnit();
   Control.DrawPanel();
-    
+  
+  updateTemp();
 }
 
 void mousePressed() 
@@ -30,3 +31,10 @@ void mousePressed()
     //exit();
     }
   }
+  
+void updateTemp()
+{  
+  fill(255);
+  textSize(25);
+  text(Temperature, width/2 + 50, height - 37);
+}
