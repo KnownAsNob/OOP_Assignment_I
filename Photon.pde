@@ -1,12 +1,49 @@
-class Photon
+class Photon 
 {
-  Photon()
-  {
-    
+  PVector position;
+  PVector velocity;
+  PVector acceleration;
+  float lifespan;
+
+  Photon(PVector l) {
+    acceleration = new PVector(0, 0.02);
+    velocity = new PVector(random(-3, 3), random(-2, 0));
+    position = l.copy();
+    lifespan = 200.0;
+}
+
+void run() 
+{
+  update();
+  display();
+}
+
+  //Change Position
+  void update() {
+    velocity.add(acceleration);
+    position.add(velocity);
+    lifespan -= 2.0;
   }
-  
-  void Detract()
+
+  // Dsiplay
+  void display() 
   {
-     ellipse(width/2, height/2 + 100, random(5, 20), random(5, 20));
+    noStroke();
+    fill(255, 0, 0 , lifespan);
+    ellipse(position.x, position.y, 12, 12);
+  }
+
+  // Remove Particle
+  boolean isDead() 
+  {
+    if (lifespan < 0.0)
+    {
+    return true;
+    } 
+    
+  else 
+    {
+      return false;
+    }
   }
 }
