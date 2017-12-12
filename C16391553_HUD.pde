@@ -17,6 +17,8 @@ void setup()
 
 float Temperature = 0;
 boolean CoreActive = false;
+boolean IsInitialising = false;
+int Size = 1;
 
 ArrayList<Photon> Photons = new ArrayList<Photon>();
 
@@ -32,35 +34,46 @@ void draw()
     Temperature += 0.05;
   }
   
-  //Photon System
-  
-  if (CoreActive == true)
+  //Draw Reactor
+  if (IsInitialising == true)
   {
-   
+    if (Size != 250)
+    {
+    fill(255, 0, 0);
+    ellipse(width/2, height/2 - 100, Size, Size);
+      Size = Size + 1;
+    }
+    
+    else
+    {
+       IsInitialising = false;
+    }
+  }
   
   //Photon System
-  
-  Photons.add(new Photon(new PVector(width/2, height/2 - 100)));
+  if (CoreActive == true && IsInitialising == false)
+  {
+    Photons.add(new Photon(new PVector(width/2, height/2 - 100)));
     
     for (int i = Photons.size()-1; i >= 0; i--) 
     {
       Photon p = Photons.get(i);
       p.run();
-      
+        
       if (p.isDead())
       {
         Photons.remove(i);
       }
     }
   }
-  
-}
+} //End of Draw
 
 void keyPressed() 
 {
     CoreActive = true;
     Core = new CoreObject();
-    Core.drawCore();
+    IsInitialising = true;
+    //Core.drawCore();
 }
   
 void updateTemp()
