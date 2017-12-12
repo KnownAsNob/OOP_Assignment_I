@@ -1,6 +1,7 @@
 ReactorHall Hall;
 ControlPanel Control;
 ReactorUnit Unit;
+Photon photon;
 
 void setup()
 {
@@ -17,6 +18,8 @@ void setup()
 float Temperature = 0;
 boolean CoreActive = false;
 
+ArrayList<Photon> Photons = new ArrayList<Photon>();
+
 void draw()
 {
   Unit.drawUnit();
@@ -29,21 +32,20 @@ void draw()
     Temperature += 0.05;
   }
   
-  /*if (CoreActive == true)
+  if (CoreActive == true)
   {
-    Core.drawCore();
-  }  */
+    photon = new Photon();
+    Photons.add(photon);
+    photon.Hello();
+    //Core.drawCore();
+  }  
 }
 
 void keyPressed() 
 {
     CoreActive = true;
-    
     Core = new CoreObject();
-
 }
-  
-
   
 void updateTemp()
 {  

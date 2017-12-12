@@ -11,7 +11,8 @@ class ReactorUnit
   {
     fill(100);
     noStroke();
-      //Bottom grip
+    
+    //Bottom grip
       rect(width/2 - 150, height - 300, 300, 400); 
       triangle(width/2 - 150, height - 300, width/2, height - 500, width/2 + 150, height - 300);
       
@@ -22,7 +23,7 @@ class ReactorUnit
       
     fill(100);
       
-      //Top grip
+    //Top grip
       rect(width/2 - 150, 0, 300, 100); 
       triangle(width/2 - 150, 0 + 100, width/2, 0 + 300, width/2 + 150, 0 + 100);
       
