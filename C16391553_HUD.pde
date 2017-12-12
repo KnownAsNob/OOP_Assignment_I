@@ -90,11 +90,14 @@ void draw()
 
 void keyPressed() 
 {
+  if (keyCode == UP)
+  {
     CoreActive = true;
     Core = new CoreObject();
     //Core.initCore();
     delay(300);
     IsInitialising = true;
+  }
 }
   
 void updateTemp()
