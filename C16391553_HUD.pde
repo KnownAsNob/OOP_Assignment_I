@@ -37,6 +37,8 @@ void draw()
   //Draw Reactor
   if (IsInitialising == true)
   {
+    Core.initCore(); //Run lazers
+    
     if (Size != 250)
     {
     fill(255, 0, 0);
@@ -46,12 +48,12 @@ void draw()
     
     else
     {
-       IsInitialising = false;
+      IsInitialising = false;
     }
   }
   
   //Photon System
-  if (CoreActive == true && IsInitialising == false)
+  if (CoreActive == true && IsInitialising == false && Temperature > 50)
   {
     Photons.add(new Photon(new PVector(width/2, height/2 - 100)));
     
@@ -66,14 +68,33 @@ void draw()
       }
     }
   }
+  
+  //Check Status
+  if (Temperature < 50)
+  {
+    fill(0, 255, 0);
+    textSize(25);
+    text("Normal", width/2, height - 110);
+  }
+  
+  else 
+  {
+    fill(255, 0, 0);
+    textSize(25);
+    text("Hot", width/2, height - 110);
+  }
+  
+  
+  
 } //End of Draw
 
 void keyPressed() 
 {
     CoreActive = true;
     Core = new CoreObject();
+    //Core.initCore();
+    delay(300);
     IsInitialising = true;
-    //Core.drawCore();
 }
   
 void updateTemp()

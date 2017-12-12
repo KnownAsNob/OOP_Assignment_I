@@ -7,7 +7,7 @@ class Photon
 
   Photon(PVector l) {
     acceleration = new PVector(0, 0.02);
-    velocity = new PVector(random(-3, 3), random(-2, 0));
+    velocity = new PVector(random(-4, 4), random(-3, 3));
     position = l.copy();
     lifespan = 200.0;
 }
