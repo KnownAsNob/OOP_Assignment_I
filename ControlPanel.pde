@@ -10,6 +10,7 @@ class ControlPanel
   }
 
 int Temperature;
+boolean LightOn;
 
 void DrawPanel()
   {
@@ -22,6 +23,18 @@ void DrawPanel()
       fill(0);
       textSize(17);
       text("Lights", width/8, height - 10);
+        //Indicator
+        if (LightOn == false)
+        {
+          fill(0, 255, 0); 
+          ellipse(width/8 + 25, height - 50, 50, 50);
+        }
+        
+        else 
+        {
+          fill(255, 0, 0); 
+          ellipse(width/8 + 25, height - 50, 50, 50);
+        }
       
     //Temperature
       fill(100);
@@ -33,3 +46,13 @@ void DrawPanel()
   }
 
 }
+
+void mousePressed() 
+  {
+    if (mouseX > width/8 && mouseX < width/8 + 50 && mouseY > height - 75 && mouseY < height - 15)
+    {
+    LightOn = drawLight();
+    println(LightOn);
+    //exit();
+    }
+  }

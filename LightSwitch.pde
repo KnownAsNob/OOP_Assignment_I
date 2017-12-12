@@ -7,23 +7,21 @@ class LightSwitch
 }
 
 // Global variables here
-boolean LightOn = false;
+boolean LightOn = true;
   
-void drawLight()
+boolean drawLight()
   {
-    if (LightOn == false) //Light off
+    if (LightOn == true) //Light off
     {
-      background(180);
-        fill(0, 255, 0); 
-        ellipse(50, 50, 100, 100);
-      LightOn = true;
+      background(50);
+      LightOn = false;
+      return false;
     }
     
     else 
     {
-      background(50, 50, 50);
-        fill(255, 0, 0); 
-        ellipse(50, 50, 100, 100);
-      LightOn = false;
+      background(180);
+      LightOn = true;
+      return true;
     }
   }
