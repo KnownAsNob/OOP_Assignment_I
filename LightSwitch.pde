@@ -7,21 +7,21 @@ class LightSwitch
 }
 
 // Global variables here
-boolean LightOn = true;
+boolean LightsOn = true;
   
 boolean drawLight()
   {
-    if (LightOn == true) //Light off
+    if (LightsOn == true) //Light off
     {
       background(50);
-      LightOn = false;
+      LightsOn = false;
       return false;
     }
     
     else 
     {
       background(180);
-      LightOn = true;
+      LightsOn = true;
       return true;
     }
   }

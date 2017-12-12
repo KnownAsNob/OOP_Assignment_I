@@ -10,7 +10,6 @@ class ControlPanel
   }
 
 int Temperature;
-boolean LightOn;
 
 void DrawPanel()
   {
@@ -30,12 +29,12 @@ void DrawPanel()
           ellipse(width/8 + 25, height - 50, 50, 50);
         }
         
-        else 
+        if (LightOn == true) 
         {
           fill(255, 0, 0); 
           ellipse(width/8 + 25, height - 50, 50, 50);
         }
-      
+   
     //Temperature
       fill(100);
       rect(width/2, height - 75, 100, 50);
@@ -46,6 +45,8 @@ void DrawPanel()
   }
 
 }
+
+boolean LightOn = true;
 
 void mousePressed() 
   {
