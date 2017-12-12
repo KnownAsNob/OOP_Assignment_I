@@ -25,3 +25,4 @@ Like the CoreActive, I needed another variable: CoolantOn. When this is true, th
 hight temperature effect (Although I also find the simplicity of the temperature versus coolant feature really interesting and think it could be expanded).
 
 Link to YouTube:
+https://www.youtube.com/watch?v=NZ195crZKHQ&feature=youtu.be
