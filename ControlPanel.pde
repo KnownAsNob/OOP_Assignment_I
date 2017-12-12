@@ -48,6 +48,13 @@ void DrawPanel()
       fill(0);
       textSize(17);
       text("Status", width/2, height - 80);
+      
+    //Coolant
+      fill(100);
+      rect(width/2 + 150, height - 150, 150, 50);
+      fill(0);
+      textSize(17);
+      text("Coolant", width/2 + 150, height - 80);
   }
 
 }

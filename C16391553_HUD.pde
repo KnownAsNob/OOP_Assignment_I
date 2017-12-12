@@ -18,6 +18,7 @@ void setup()
 float Temperature = 0;
 boolean CoreActive = false;
 boolean IsInitialising = false;
+boolean CoolantOn = false;
 int Size = 1;
 
 ArrayList<Photon> Photons = new ArrayList<Photon>();
@@ -31,7 +32,15 @@ void draw()
   
   if (CoreActive == true)
   {
-    Temperature += 0.05;
+    if (CoolantOn == true)
+    {
+      Temperature -= 0.01;
+    }
+    
+    else
+    {
+      Temperature += 0.05;
+    }
   }
   
   //Draw Reactor
@@ -84,6 +93,20 @@ void draw()
     text("Hot", width/2, height - 110);
   }
   
+  //Check Coolant
+  if (CoolantOn == false)
+  {
+    fill(255, 0, 0);
+    textSize(25);
+    text("Coolant Off", width/2 + 150, height - 110);
+  }
+  
+  else 
+  {
+    fill(0, 0, 255);
+    textSize(25);
+    text("Coolant On", width/2 + 150, height - 110);
+  }  
   
   
 } //End of Draw
@@ -97,6 +120,11 @@ void keyPressed()
     //Core.initCore();
     delay(300);
     IsInitialising = true;
+  }
+  
+  if (keyCode == LEFT)
+  {
+    CoolantOn = !CoolantOn;
   }
 }
   
